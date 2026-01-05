@@ -1,0 +1,97 @@
+:root[data-theme="cyberpunk"] {
+  /* Cyberpunk 2077: Neon yellow, cyan, dark city */
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #0f0f18;
+  --bg-tertiary: #14141f;
+  --bg-card: #1a1a28;
+  --bg-hover: #222235;
+
+  /* Accents - Cyberpunk signature colors */
+  --accent-gold: #fcee0a; /* Cyberpunk yellow */
+  --accent-gold-light: #fff845;
+  --accent-purple: #ff2a6d; /* Hot pink */
+  --accent-blue: #05d9e8; /* Cyan neon */
+  --accent-cyan: #05d9e8;
+  --accent-green: #01ffc3;
+
+  --accent-danger: #ff2a6d;
+  --accent-danger-rgb: 255, 42, 109;
+  --accent-success: #01ffc3;
+  --accent-success-rgb: 1, 255, 195;
+
+  /* UI RGB helpers */
+  --ui-accent-rgb: 252, 238, 10;
+  --ui-highlight-rgb: 5, 217, 232;
+  --selection-rgb: 252, 238, 10;
+
+  /* Text */
+  --text-primary: #f0f0f5;
+  --text-secondary: #b8b8c8;
+  --text-muted: #6a6a80;
+  --text-gold: #fcee0a;
+
+  /* Gradients */
+  --gradient-gold: linear-gradient(
+    135deg,
+    #1a1a00 0%,
+    #fcee0a 55%,
+    #05d9e8 100%
+  );
+  --gradient-purple: linear-gradient(
+    135deg,
+    #1a0015 0%,
+    #ff2a6d 45%,
+    #05d9e8 100%
+  );
+  --gradient-dark: radial-gradient(
+      140% 140% at 15% 15%,
+      rgba(252, 238, 10, 0.12),
+      transparent 55%
+    ),
+    radial-gradient(
+      120% 120% at 80% 0%,
+      rgba(5, 217, 232, 0.14),
+      transparent 50%
+    ),
+    linear-gradient(180deg, #0a0a0f 0%, #050508 35%, #0a0a0f 100%);
+  --gradient-card: linear-gradient(
+    150deg,
+    rgba(26, 26, 40, 0.92) 0%,
+    rgba(10, 10, 15, 0.96) 100%
+  );
+
+  /* Overlays / texture - glitch effect inspired */
+  --texture-grit: radial-gradient(
+      circle at 18% 18%,
+      rgba(252, 238, 10, 0.06) 0,
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(5, 217, 232, 0.05) 0,
+      transparent 32%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.02) 0 2px,
+      transparent 2px 4px
+    );
+
+  /* Shadows & borders */
+  --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.7);
+  --shadow-gold: 0 6px 28px rgba(252, 238, 10, 0.25);
+  --shadow-glow: 0 0 30px rgba(5, 217, 232, 0.3);
+  --border-subtle: 1px solid rgba(252, 238, 10, 0.18);
+  --border-gold: 1px solid rgba(252, 238, 10, 0.6);
+
+  /* Fonts - Futuristic tech feel */
+  --font-body: "Rajdhani", "Orbitron", system-ui, -apple-system, sans-serif;
+  --font-heading: "Orbitron", "Rajdhani", system-ui, sans-serif;
+  --font-accent: "Orbitron", "Rajdhani", sans-serif;
+  --font-mono: "Share Tech Mono", "Fira Code", ui-monospace, monospace;
+
+  /* Logo */
+  --logo-fill: #fcee0a;
+  --logo-glow-primary-rgb: 252, 238, 10;
+  --logo-glow-secondary-rgb: 5, 217, 232;
+}

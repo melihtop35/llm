@@ -1,0 +1,85 @@
+version: "3.9"
+
+services:
+  # ============ MONGODB ============
+  mongo:
+    image: mongo:7
+    container_name: llm-council-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      # İsteğe bağlı: Authentication eklemek için
+      # MONGO_INITDB_ROOT_USERNAME: admin
+      # MONGO_INITDB_ROOT_PASSWORD: password123
+      TZ: Europe/Istanbul
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - llm-network
+
+  # ============ BACKEND (FastAPI) ============
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: llm-council-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - MONGODB_URL=mongodb://mongo:27017
+      - MONGODB_DATABASE=llm_council
+    depends_on:
+      mongo:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - llm-network
+
+  # ============ FRONTEND (Nginx) ============
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+      args:
+        # Build time'da API URL (nginx proxy kullanacağız)
+        VITE_API_URL: ""
+    container_name: llm-council-frontend
+    restart: unless-stopped
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    networks:
+      - llm-network
+
+# ============ VOLUMES ============
+volumes:
+  mongo_data:
+    name: llm-council-mongo-data
+
+# ============ NETWORKS ============
+networks:
+  llm-network:
+    name: llm-council-network
+    driver: bridge

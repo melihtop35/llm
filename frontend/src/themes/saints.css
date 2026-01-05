@@ -1,0 +1,98 @@
+:root[data-theme="saints"] {
+  /* Saints Row 3: deep noir + neon purple + chrome */
+  --bg-primary: #0b0712;
+  --bg-secondary: #12091f;
+  --bg-tertiary: #190f2c;
+  --bg-card: #1f1536;
+  --bg-hover: #2a1e49;
+
+  /* Accents */
+  --accent-gold: #d7d7e0; /* chrome edge */
+  --accent-gold-light: #f1f1f6;
+  --accent-purple: #7b3fe4; /* SR3 neon violet */
+  --accent-blue: #9ad0ff;
+  --accent-cyan: #c800ff; /* magenta-purple neon */
+  --accent-green: #63ffc7;
+
+  --accent-danger: #ff6b6b;
+  --accent-danger-rgb: 255, 107, 107;
+  --accent-success: #00c896;
+  --accent-success-rgb: 0, 200, 150;
+
+  /* A few UI RGB helpers (keeps existing look) */
+  --ui-accent-rgb: 185, 103, 255;
+  --ui-highlight-rgb: 255, 215, 0;
+  --selection-rgb: 212, 175, 55;
+
+  /* Text */
+  --text-primary: #e9e7f5;
+  --text-secondary: #b4adc9;
+  --text-muted: #736d86;
+  --text-gold: #d7d7e0;
+
+  /* Gradients */
+  --gradient-gold: linear-gradient(
+    135deg,
+    #2b0f42 0%,
+    #7b3fe4 55%,
+    #c800ff 100%
+  );
+  --gradient-purple: linear-gradient(
+    135deg,
+    #3a1a62 0%,
+    #7b3fe4 45%,
+    #c800ff 100%
+  );
+  --gradient-dark: radial-gradient(
+      140% 140% at 15% 15%,
+      rgba(123, 63, 228, 0.18),
+      transparent 55%
+    ),
+    radial-gradient(
+      120% 120% at 80% 0%,
+      rgba(200, 0, 255, 0.16),
+      transparent 50%
+    ),
+    linear-gradient(180deg, #0b0712 0%, #06040a 35%, #0b0712 100%);
+  --gradient-card: linear-gradient(
+    150deg,
+    rgba(34, 24, 54, 0.92) 0%,
+    rgba(18, 14, 34, 0.96) 100%
+  );
+
+  /* Overlays / texture */
+  --texture-grit: radial-gradient(
+      circle at 18% 18%,
+      rgba(255, 255, 255, 0.05) 0,
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(255, 255, 255, 0.04) 0,
+      transparent 32%
+    ),
+    repeating-linear-gradient(
+      125deg,
+      rgba(255, 255, 255, 0.018) 0 12px,
+      transparent 12px 22px
+    );
+
+  /* Shadows & borders */
+  --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.55);
+  --shadow-gold: 0 6px 28px rgba(123, 63, 228, 0.28);
+  --shadow-glow: 0 0 30px rgba(123, 63, 228, 0.35);
+  --border-subtle: 1px solid rgba(123, 63, 228, 0.14);
+  --border-gold: 1px solid rgba(215, 215, 224, 0.5);
+
+  /* Fonts */
+  --font-body: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-heading: "Cinzel Decorative", "Rock Salt", "Montserrat", sans-serif;
+  --font-accent: "Rock Salt", cursive;
+  --font-mono: "Fira Code", "Consolas", ui-monospace, monospace;
+
+  /* Logo */
+  --logo-fill: #6a0dad;
+  --logo-glow-primary-rgb: 106, 13, 173;
+  --logo-glow-secondary-rgb: 200, 162, 72;
+}

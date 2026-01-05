@@ -1,0 +1,81 @@
+name: llm-council
+services:
+  mongo:
+    image: mongo:7
+    container_name: llm-council-mongo
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      TZ: Europe/Istanbul
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - llm-network
+  backend:
+    image: melih35/llm-council-backend:latest
+    container_name: llm-council-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGODB_URL=mongodb://mongo:27017
+      - MONGODB_DATABASE=llm_council
+    volumes:
+      - llm_config:/app
+    depends_on:
+      mongo:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - llm-network
+  frontend:
+    image: melih35/llm-council-frontend:latest
+    container_name: llm-council-frontend
+    restart: unless-stopped
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    networks:
+      - llm-network
+volumes:
+  mongo_data:
+  llm_config:
+networks:
+  llm-network:
+    driver: bridge
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: frontend
+  author: melihtop35
+  category: Developer
+  description:
+    en_US: LLM Council - Multi-AI Chat Interface with Council Mode. Chat with multiple AI models simultaneously and get synthesized responses.
+  developer: melihtop35
+  icon: https://raw.githubusercontent.com/melihtop35/Homeapp/master/Apps/LLMCouncil/icon.png
+  index: /
+  port_map: "5173"
+  scheme: http
+  tagline:
+    en_US: Multi-AI Chat with Council Mode
+  thumbnail: ""
+  title:
+    en_US: LLM Council

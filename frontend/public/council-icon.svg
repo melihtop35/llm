@@ -1,0 +1,108 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6a0dad;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c8a248;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#purpleGrad)" opacity="0.1"/>
+  
+  <!-- Central AI brain/core -->
+  <g filter="url(#glow)">
+    <!-- Main central node -->
+    <circle cx="256" cy="256" r="45" fill="url(#purpleGrad)" stroke="url(#goldGrad)" stroke-width="3"/>
+    
+    <!-- Inner glow circle -->
+    <circle cx="256" cy="256" r="35" fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Neural connections from center -->
+    <path d="M 256 211 L 256 150" stroke="url(#purpleGrad)" stroke-width="3" opacity="0.7" stroke-linecap="round"/>
+    <path d="M 301 256 L 362 256" stroke="url(#purpleGrad)" stroke-width="3" opacity="0.7" stroke-linecap="round"/>
+    <path d="M 256 301 L 256 362" stroke="url(#purpleGrad)" stroke-width="3" opacity="0.7" stroke-linecap="round"/>
+    <path d="M 211 256 L 150 256" stroke="url(#purpleGrad)" stroke-width="3" opacity="0.7" stroke-linecap="round"/>
+    
+    <!-- Diagonal connections -->
+    <path d="M 285 227 L 330 182" stroke="url(#purpleGrad)" stroke-width="2.5" opacity="0.6" stroke-linecap="round"/>
+    <path d="M 285 285 L 330 330" stroke="url(#purpleGrad)" stroke-width="2.5" opacity="0.6" stroke-linecap="round"/>
+    <path d="M 227 285 L 182 330" stroke="url(#purpleGrad)" stroke-width="2.5" opacity="0.6" stroke-linecap="round"/>
+    <path d="M 227 227 L 182 182" stroke="url(#purpleGrad)" stroke-width="2.5" opacity="0.6" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Council members (4 cardinal directions) -->
+  <g>
+    <!-- Top AI node -->
+    <circle cx="256" cy="120" r="32" fill="url(#purpleGrad)" stroke="url(#goldGrad)" stroke-width="2.5"/>
+    <circle cx="256" cy="120" r="22" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.5"/>
+    <path d="M 246 115 Q 256 110 266 115" stroke="url(#goldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M 246 125 Q 256 130 266 125" stroke="url(#goldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    
+    <!-- Right AI node -->
+    <circle cx="392" cy="256" r="32" fill="url(#purpleGrad)" stroke="url(#goldGrad)" stroke-width="2.5"/>
+    <circle cx="392" cy="256" r="22" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.5"/>
+    <path d="M 382 251 Q 392 246 402 251" stroke="url(#goldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M 382 261 Q 392 266 402 261" stroke="url(#goldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    
+    <!-- Bottom AI node -->
+    <circle cx="256" cy="392" r="32" fill="url(#purpleGrad)" stroke="url(#goldGrad)" stroke-width="2.5"/>
+    <circle cx="256" cy="392" r="22" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.5"/>
+    <path d="M 246 387 Q 256 382 266 387" stroke="url(#goldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M 246 397 Q 256 402 266 397" stroke="url(#goldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    
+    <!-- Left AI node -->
+    <circle cx="120" cy="256" r="32" fill="url(#purpleGrad)" stroke="url(#goldGrad)" stroke-width="2.5"/>
+    <circle cx="120" cy="256" r="22" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.5"/>
+    <path d="M 110 251 Q 120 246 130 251" stroke="url(#goldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M 110 261 Q 120 266 130 261" stroke="url(#goldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Smaller satellite nodes (diagonal positions) -->
+  <g opacity="0.85">
+    <!-- Top-right -->
+    <circle cx="350" cy="162" r="24" fill="url(#purpleGrad)" stroke="url(#goldGrad)" stroke-width="2"/>
+    <circle cx="350" cy="162" r="16" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.4"/>
+    
+    <!-- Bottom-right -->
+    <circle cx="350" cy="350" r="24" fill="url(#purpleGrad)" stroke="url(#goldGrad)" stroke-width="2"/>
+    <circle cx="350" cy="350" r="16" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.4"/>
+    
+    <!-- Bottom-left -->
+    <circle cx="162" cy="350" r="24" fill="url(#purpleGrad)" stroke="url(#goldGrad)" stroke-width="2"/>
+    <circle cx="162" cy="350" r="16" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.4"/>
+    
+    <!-- Top-left -->
+    <circle cx="162" cy="162" r="24" fill="url(#purpleGrad)" stroke="url(#goldGrad)" stroke-width="2"/>
+    <circle cx="162" cy="162" r="16" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.4"/>
+  </g>
+  
+  <!-- Data flow particles (decorative circles showing activity) -->
+  <g opacity="0.4">
+    <circle cx="256" cy="180" r="4" fill="url(#goldGrad)">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="332" cy="256" r="4" fill="url(#goldGrad)">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="256" cy="332" r="4" fill="url(#goldGrad)">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="180" cy="256" r="4" fill="url(#goldGrad)">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Outer orbital ring -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="url(#purpleGrad)" stroke-width="2" opacity="0.2" stroke-dasharray="10,15"/>
+</svg>

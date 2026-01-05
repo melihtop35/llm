@@ -1,0 +1,66 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv
+venv
+ENV
+env
+.eggs
+*.egg-info
+.mypy_cache
+.pytest_cache
+.coverage
+htmlcov
+
+# Node
+frontend/node_modules
+frontend/.npm
+frontend/.pnpm-store
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile*
+docker-compose*.yml
+.docker
+
+# Logs
+*.log
+logs/
+
+# Environment files (güvenlik için)
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+frontend/dist
+build/
+dist/
+
+# Documentation
+README.md
+docs/
+*.md
+
+# Tests
+tests/
+test/
+*_test.py
+test_*.py

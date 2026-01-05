@@ -1,0 +1,101 @@
+.stage3 {
+  background: linear-gradient(
+    145deg,
+    rgba(var(--ui-accent-rgb), 0.12) 0%,
+    rgba(var(--ui-highlight-rgb), 0.05) 100%
+  );
+  border: 1px solid rgba(var(--ui-accent-rgb), 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.stage3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-gold);
+}
+
+.stage3::after {
+  content: "⚜";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 48px;
+  opacity: 0.1;
+}
+
+.final-response {
+  background: var(--bg-tertiary);
+  padding: 24px;
+  border-radius: 12px;
+  border: var(--border-subtle);
+  position: relative;
+}
+
+.final-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.chairman-label {
+  color: var(--accent-gold);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chairman-label .saints-logo {
+  flex-shrink: 0;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: transparent;
+  border: 1px solid rgba(var(--ui-accent-rgb), 0.3);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  background: rgba(var(--ui-accent-rgb), 0.15);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.copy-btn svg {
+  flex-shrink: 0;
+}
+
+.final-text {
+  color: var(--text-primary);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+/* Stage 3 title override - Altın/Gold tema */
+.stage3 .stage-title {
+  color: var(--accent-gold);
+}
+
+.stage3 .stage-title::before {
+  content: "3";
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #fcd34d 100%);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+}

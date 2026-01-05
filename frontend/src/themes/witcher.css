@@ -1,0 +1,89 @@
+:root[data-theme="witcher"] {
+  /* The Witcher: Dark medieval, blood red, silver, forest green */
+  --bg-primary: #0c0b0a;
+  --bg-secondary: #13120f;
+  --bg-tertiary: #1a1814;
+  --bg-card: #221f1a;
+  --bg-hover: #2a2720;
+
+  /* Accents - Witcher signature colors */
+  --accent-gold: #c9a227; /* Gold medallion */
+  --accent-gold-light: #e8c84a;
+  --accent-purple: #8b0000; /* Blood red */
+  --accent-blue: #a8a8a8; /* Silver sword */
+  --accent-cyan: #2d5a27; /* Forest green */
+  --accent-green: #4a7c3f;
+
+  --accent-danger: #8b0000;
+  --accent-danger-rgb: 139, 0, 0;
+  --accent-success: #4a7c3f;
+  --accent-success-rgb: 74, 124, 63;
+
+  /* UI RGB helpers */
+  --ui-accent-rgb: 201, 162, 39;
+  --ui-highlight-rgb: 139, 0, 0;
+  --selection-rgb: 201, 162, 39;
+
+  /* Text */
+  --text-primary: #e8e4dc;
+  --text-secondary: #b8b0a0;
+  --text-muted: #706858;
+  --text-gold: #c9a227;
+
+  /* Gradients */
+  --gradient-gold: linear-gradient(
+    135deg,
+    #2a2210 0%,
+    #c9a227 55%,
+    #8b0000 100%
+  );
+  --gradient-purple: linear-gradient(
+    135deg,
+    #1a0808 0%,
+    #8b0000 45%,
+    #c9a227 100%
+  );
+  --gradient-dark: radial-gradient(
+      140% 140% at 15% 15%,
+      rgba(201, 162, 39, 0.1),
+      transparent 55%
+    ),
+    radial-gradient(120% 120% at 80% 0%, rgba(139, 0, 0, 0.12), transparent 50%),
+    linear-gradient(180deg, #0c0b0a 0%, #060605 35%, #0c0b0a 100%);
+  --gradient-card: linear-gradient(
+    150deg,
+    rgba(34, 31, 26, 0.92) 0%,
+    rgba(12, 11, 10, 0.96) 100%
+  );
+
+  /* Overlays / texture - parchment/leather feel */
+  --texture-grit: radial-gradient(
+      circle at 18% 18%,
+      rgba(201, 162, 39, 0.05) 0,
+      transparent 28%
+    ),
+    radial-gradient(circle at 80% 0%, rgba(139, 0, 0, 0.04) 0, transparent 32%),
+    repeating-linear-gradient(
+      125deg,
+      rgba(255, 255, 255, 0.015) 0 12px,
+      transparent 12px 22px
+    );
+
+  /* Shadows & borders */
+  --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.65);
+  --shadow-gold: 0 6px 28px rgba(201, 162, 39, 0.2);
+  --shadow-glow: 0 0 30px rgba(139, 0, 0, 0.25);
+  --border-subtle: 1px solid rgba(201, 162, 39, 0.15);
+  --border-gold: 1px solid rgba(201, 162, 39, 0.5);
+
+  /* Fonts - Medieval fantasy feel */
+  --font-body: "Crimson Text", "Georgia", serif;
+  --font-heading: "Cinzel", "Trajan Pro", "Georgia", serif;
+  --font-accent: "Cinzel", "Georgia", serif;
+  --font-mono: "Courier Prime", "Courier New", ui-monospace, monospace;
+
+  /* Logo */
+  --logo-fill: #c9a227;
+  --logo-glow-primary-rgb: 201, 162, 39;
+  --logo-glow-secondary-rgb: 139, 0, 0;
+}
